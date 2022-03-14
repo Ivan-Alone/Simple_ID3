@@ -10,14 +10,14 @@
 			$this->flagInt2 = 0;
 		}
 
-        protected static abstract function type();
+		protected static abstract function type();
 
-		public function setTagAlterPreserve(boolean $dontsave) {
+		public function setTagAlterPreserve(bool $dontsave) {
 			$this->flagInt1 = 
 				(($dontsave ? 1 : 0) << 7) | ((($this->flagInt1 >> 6) & 1) << 6) | ((($this->flagInt1 >> 5) & 1) << 5);
 		}
 
-		public function setFileAlterPreserve(boolean $dontsave) {
+		public function setFileAlterPreserve(bool $dontsave) {
 			$this->flagInt1 = 
 				(($this->flagInt1 >> 7) << 7) | (($dontsave ? 1 : 0) << 6) | ((($this->flagInt1 >> 5) & 1) << 5);
 		}
