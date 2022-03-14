@@ -27,12 +27,12 @@
 				(($this->flagInt1 >> 7) << 7) | ((($this->flagInt1 >> 6) & 1) << 6) | (($readonly ? 1 : 0) << 5);
 		}
 
-		public function setCompressed(boolean $compressed) {
+		public function setCompressed(bool $compressed) {
 			$this->flagInt2 = 
 				(($compressed ? 1 : 0) << 7) | ((($this->flagInt2 >> 6) & 1) << 6) | ((($this->flagInt2 >> 5) & 1) << 5);
 		}
 
-		public function setEncryption(boolean $encrypted) {
+		public function setEncryption(bool $encrypted) {
 			$this->flagInt2 = 
 				(($this->flagInt2 >> 7) << 7) | (($encrypted ? 1 : 0) << 6) | ((($this->flagInt2 >> 5) & 1) << 5);
 		}
