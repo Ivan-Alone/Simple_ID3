@@ -94,7 +94,7 @@
 		}
 
 		public function forEach(\Closure $callback) {
-			foreach ($this->storage as $fd_id => $value) {
+			foreach ($this->storage as $fd_id => &$value) {
 				$callback($fd_id, $value);
 			}
 		}
