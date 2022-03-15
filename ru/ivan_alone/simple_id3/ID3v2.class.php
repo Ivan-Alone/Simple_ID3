@@ -15,90 +15,39 @@
 
 		public static function getTypeClass($type) {
 			$map = [
-				[
-					'tag' => 'TALB',
-					'class' => 'AlbumID3Tag'
-				], [
-					'tag' => 'TPE2',
-					'class' => 'AlbumPerformerID3Tag'
-				], [
-					'tag' => 'TBPM',
-					'class' => 'BPMID3Tag'
-				], [
-					'tag' => 'COMM',
-					'class' => 'CommentID3Tag'
-				], [
-					'tag' => 'TCOM',
-					'class' => 'ComposerID3Tag'
-				], [
-					'tag' => 'TIT1',
-					'class' => 'ContentGroupID3Tag'
-				], [
-					'tag' => 'TCOP',
-					'class' => 'CopyrightMessageID3Tag'
-				], [
-					'tag' => 'TXXX',
-					'class' => 'CustomID3Tag'
-				], [
-					'tag' => 'TENC',
-					'class' => 'EncodedByID3Tag'
-				], [
-					'tag' => 'TFLT',
-					'class' => 'FileTypeID3Tag'
-				], [
-					'tag' => 'TCON',
-					'class' => 'GenreID3Tag'
-				], [
-					'tag' => 'APIC',
-					'class' => 'ImageID3Tag'
-				], [
-					'tag' => 'TKEY',
-					'class' => 'InitialKeyID3Tag'
-				], [
-					'tag' => 'TLAN',
-					'class' => 'LanguageID3Tag'
-				], [
-					'tag' => 'TLEN',
-					'class' => 'LengthID3Tag'
-				], [
-					'tag' => 'TMED',
-					'class' => 'MediaTypeID3Tag'
-				], [
-					'tag' => 'TPE1',
-					'class' => 'PerformerID3Tag'
-				], [
-					'tag' => 'TDLY',
-					'class' => 'PlaylistDelayID3Tag'
-				], [
-					'tag' => 'TDAT',
-					'class' => 'RecordingDateID3Tag'
-				], [
-					'tag' => 'TIME',
-					'class' => 'RecordingTimeID3Tag'
-				], [
-					'tag' => 'TIT3',
-					'class' => 'SubtitleID3Tag'
-				], [
-					'tag' => 'TEXT',
-					'class' => 'TextWriterID3Tag'
-				], [
-					'tag' => 'TIT2',
-					'class' => 'TitleID3Tag'
-				], [
-					'tag' => 'TRCK',
-					'class' => 'TrackNumberID3Tag'
-				], [
-					'tag' => 'TYER',
-					'class' => 'YearID3Tag'
-				], [
-					'tag' => 'USLT',
-					'class' => 'UnsyncedLyricsID3Tag'
-				]
+				'TALB'=> 'AlbumID3Tag',
+				'TPE2'=> 'AlbumPerformerID3Tag',
+				'TBPM'=> 'BPMID3Tag',
+				'COMM'=> 'CommentID3Tag',
+				'TCOM'=> 'ComposerID3Tag',
+				'TIT1'=> 'ContentGroupID3Tag',
+				'TCOP'=> 'CopyrightMessageID3Tag',
+				'TXXX'=> 'CustomID3Tag',
+				'TENC'=> 'EncodedByID3Tag',
+				'TFLT'=> 'FileTypeID3Tag',
+				'TCON'=> 'GenreID3Tag',
+				'APIC'=> 'ImageID3Tag',
+				'TKEY'=> 'InitialKeyID3Tag',
+				'TLAN'=> 'LanguageID3Tag',
+				'TLEN'=> 'LengthID3Tag',
+				'TMED'=> 'MediaTypeID3Tag',
+				'TPE1'=> 'PerformerID3Tag',
+				'TDLY'=> 'PlaylistDelayID3Tag',
+				'TSRC'=> 'ISRCID3Tag',
+				'TDAT'=> 'RecordingDateID3Tag',
+				'TIME'=> 'RecordingTimeID3Tag',
+				'TSSE'=> 'SoftwareID3Tag',
+				'TIT3'=> 'SubtitleID3Tag',
+				'TEXT'=> 'TextWriterID3Tag',
+				'TIT2'=> 'TitleID3Tag',
+				'TRCK'=> 'TrackNumberID3Tag',
+				'TYER'=> 'YearID3Tag',
+				'USLT'=> 'UnsyncedLyricsID3Tag'
 			];
 			$namespace = '\\ru\\ivan_alone\\simple_id3\\tags\\';
-			foreach ($map as $tag) {
-				if ($tag['tag'] == $type) {
-					return $namespace . $tag['class'];
+			foreach ($map as $tag => $class) {
+				if ($tag == $type) {
+					return $namespace . $class;
 				}
 			}
 			return false;
